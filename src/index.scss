@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+body{
+  margin:0;
+  color:white;
+  font-family: 'Roboto', sans-serif;
+}
+
+.app{
+  width:100dvw;
+  height:100dvh;
+  display: flex;
+  flex-direction: column;
+  background:rgb(22, 22, 22);
+}
+.tabControl{
+  width:100%;
+  box-sizing:border-box;  
+  background:rgb(42, 42, 42);
+  padding:8px;
+  display:flex;
+  gap:16px;
+  &__link{
+    margin-left:auto;
+  }
+  &__btn{
+    padding:8px 16px;
+    transition:background 0.3s ease-in-out;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    color:white;
+    text-decoration: none;
+
+    &:hover{
+      background:rgb(56, 56, 56);
+    }
+    &--active{
+      background:rgb(50, 50, 50);
+      &:after{
+        content:'';
+        width:100%;
+        height:2px;
+        background:rgb(164, 164, 164);
+        position: absolute;
+        bottom:-2px;
+        left:0;
+        animation: widthAnim 0.3s ease-in-out;
+      }
+    }
+  }
+}
+@keyframes widthAnim {
+  from{
+    width:0%;
+  }
+  to{
+    width:100%;
+  }
+}
+.tabWrapper{
+  flex-grow:1;
+  padding:32px 16px;
+}
+
+table{
+  font-size:24px;
+  border-spacing: 0;
+}
+td{
+  padding:8px;
+  border:1px solid rgb(88, 88, 88);
+}
+li{
+  font-size:24px;
+}
+.chart{
+  display: flex;
+  gap:8px;
+  align-items: end;
+
+  &__value{
+    padding:8px;
+  }
+}
+
+

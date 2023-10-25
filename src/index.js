@@ -13,7 +13,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter >
       <Routes>
-        <Route path="*" element={<Navigate to="/load" replace />}/>
+        <Route path="*" element={<Navigate to="/load" replace relative="path"/>}/>
         <Route
             path=":tabID"
             element={<App/>}

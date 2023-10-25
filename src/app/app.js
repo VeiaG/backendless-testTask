@@ -12,7 +12,7 @@ const TabControl = ({tabs})=>{
             return <div 
                 className={`tabControl__btn ${tab.id ===tabID ? "tabControl__btn--active":""}`}
                 key={tab.id} 
-                onClick={()=>navigate(`/`+tab.id)}>
+                onClick={()=>navigate(`/`+tab.id , { relative: "path" })}>
                     {tab.title}
             </div>
         })}
@@ -35,7 +35,7 @@ const TabDisplay = ({tabs})=>{
             const currentTab = tabs.find(tab=>tab.id===tabID);
             if(!currentTab){
                 //if can't find then redirect to first tab in array
-                navigate(`/${tabs[0].id}`);
+                navigate(`/${tabs[0].id}` ,{ relative: "path" });
                 return;
             }
             //lazy import of tab
